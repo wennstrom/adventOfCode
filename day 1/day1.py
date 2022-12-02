@@ -5,12 +5,12 @@ currentCalorieCount = 0;
 maxCalorieCount = 0;
 
 for l in lines:
-	if not l.strip().isdigit():
+	if l.strip().isdigit():
+		currentCalorieCount += int(l)
+	else:
 		if currentCalorieCount > maxCalorieCount:
 			maxCalorieCount = currentCalorieCount
 		
 		currentCalorieCount = 0
-	else:
-		currentCalorieCount += int(l)
 		
 print(maxCalorieCount)
